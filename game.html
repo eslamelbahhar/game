@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;The 7S Model Interactive Game&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* CSS Variables for theming and consistency */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary: #4c6ef5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary-light: #748ffc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary-dark: #3b5bdb;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--secondary: #ff922b;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--secondary-light: #ffa94d;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--secondary-dark: #f76707;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--success: #40c057;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--danger: #fa5252;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--warning: #fd7e14;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--info: #15aabf;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--light: #f8f9fa;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--dark: #343a40;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--gray: #6c757d;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--white: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--radius: 12px; /* Consistent border radius */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Consistent shadow */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--transition: all 0.3s ease; /* Consistent transition for interactive elements */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Basic reset and box-sizing */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f0f4f8; /* Light background for the page */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto; /* Center the main content */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, var(--primary), var(--primary-dark));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: var(--shadow);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center; /* Center header text */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Typography */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1, h2, h3, h4 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--primary-dark);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Card styling */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: var(--shadow);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: var(--transition);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-5px); /* Subtle hover effect */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-header.text-center { /* For centering result header */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block; /* Override flex for simple centering */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-icon {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Button styling */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>white-space: nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>vertical-align: middle;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.75rem 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: var(--transition);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 5px 0; /* Add some vertical margin for buttons */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn:disabled {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--gray);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: not-allowed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary:hover:not(:disabled) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--primary-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--primary-dark);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-secondary {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--secondary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--secondary);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-secondary:hover:not(:disabled) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--secondary-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--secondary-dark);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-info { /* Kept for potential future use, but not for current AI buttons */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--info);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--info);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-info:hover:not(:disabled) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #11788a; /* Darker shade of info */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Utility classes */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.flex { display: flex; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.justify-between { justify-content: space-between; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.align-center { align-items: center; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.text-center { text-align: center; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mb-10 { margin-bottom: 10px !important; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mb-20 { margin-bottom: 20px !important; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mt-20 { margin-top: 20px !important; }</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Game specific containers */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.game-container, .intro-container, .results-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.5s ease, visibility 0.5s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.game-container { display: none; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.intro-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.model-diagram {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 30px auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.question-card { margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.options-container { margin-top: 15px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.option {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--light);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: var(--transition);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #dee2e6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.option:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #e9ecef;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #ced4da;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.option.selected {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--primary-light);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.option.correct {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--success) !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--white) !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--success) !important;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.option.incorrect {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--danger) !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--white) !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--danger) !important;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.scenario-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #e9ecef;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 5px solid var(--info);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.feedback { /* Only feedback styling, AI containers removed */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.feedback i { margin-right: 8px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.feedback.correct {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(64, 192, 87, 0.1);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--success);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--success);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.feedback.incorrect {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(250, 82, 82, 0.1);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--danger);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--danger);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.progress-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #e9ecef;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.progress-bar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: width 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 0%;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.score-panel {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--primary-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.badge {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.25em 0.6em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>white-space: nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>vertical-align: baseline;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--secondary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.results-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.results {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result-badge {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50px;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result-badge.excellent { background-color: var(--success); color: var(--white); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result-badge.good { background-color: var(--secondary); color: var(--white); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result-badge.needs-improvement { background-color: var(--danger); color: var(--white); }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>#feedbackText { font-size: 1.1rem; margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#breakdownContainer p {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">             </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>padding-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>border-bottom: 1px solid #eee;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>text-align: left;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#breakdownContainer p:last-child { border-bottom: none; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.share-container { margin-top: 30px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.share-container h3 { margin-bottom: 15px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.share-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #3b5998;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-flex;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: var(--transition);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.share-btn:hover { opacity: 0.8; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.share-btn i { margin-right: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.share-btn.copylink { background-color: var(--info); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.share-btn.twitter { background-color: #1DA1F2; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.share-btn.linkedin { background-color: #0077B5; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.share-btn.email { background-color: var(--gray); }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.model-svg { max-width: 100%; height: auto; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Loading Indicator (can be removed if no async operations remain) */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.loading-indicator {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--primary-dark);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.loading-indicator i {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: spin 1s linear infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes spin {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: rotate(0deg); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { transform: rotate(360deg); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.container { padding: 15px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>h1 { font-size: 2rem; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>h2 { font-size: 1.75rem; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>h3 { font-size: 1.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.card { padding: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.card-icon { font-size: 2rem; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.flex.justify-between { flex-direction: column; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.flex.justify-between &gt; div { flex: 0 0 100%; margin-bottom: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.share-btn { margin-bottom:10px; width: calc(50% - 10px); justify-content: center; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.share-btn:nth-child(odd){ margin-right: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.share-btn:nth-child(even){ margin-left: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">         </span>@media (max-width: 480px) {</p>
+<p class="p1"><span class="Apple-converted-space">             </span>.share-btn { width: 100%; margin-left: 0; margin-right: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">         </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;The 7S Model Interactive Learning Game&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Test your knowledge on organizational culture transformation&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="intro-container" id="introContainer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card-icon"&gt; &lt;i class="fas fa-puzzle-piece"&gt;&lt;/i&gt; &lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt; &lt;h2&gt;Welcome to the 7S Model Game!&lt;/h2&gt; &lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;This interactive game will help you understand McKinsey's 7S Model... Test your knowledge, explore real-world scenarios, and learn how to implement cultural change effectively.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;What is the 7S Model?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;The 7S Model is a framework... It helps organizations analyze and improve their performance by examining seven key internal elements that need to be aligned for success.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;svg class="model-svg" width="600" height="400" viewBox="0 0 600 400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;circle cx="300" cy="200" r="150" fill="#f0f4f8" stroke="var(--primary)" stroke-width="2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;circle cx="300" cy="200" r="80" fill="var(--primary)" opacity="0.2" stroke="var(--primary)" stroke-width="2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;text x="300" y="200" text-anchor="middle" dominant-baseline="central" font-size="20" font-weight="bold" fill="var(--dark)"&gt;Culture&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;circle cx="300" cy="70" r="40" fill="var(--white)" stroke="var(--primary)" stroke-width="2"/&gt;&lt;text x="300" y="70" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="bold" fill="var(--dark)"&gt;Structure&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;circle cx="170" cy="120" r="40" fill="var(--white)" stroke="var(--primary)" stroke-width="2"/&gt;&lt;text x="170" y="120" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="bold" fill="var(--dark)"&gt;Strategy&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;circle cx="170" cy="280" r="40" fill="var(--white)" stroke="var(--primary)" stroke-width="2"/&gt;&lt;text x="170" y="280" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="bold" fill="var(--dark)"&gt;Systems&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;circle cx="300" cy="330" r="40" fill="var(--white)" stroke="var(--primary)" stroke-width="2"/&gt;&lt;text x="300" y="330" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="bold" fill="var(--dark)"&gt;Style&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;circle cx="430" cy="280" r="40" fill="var(--white)" stroke="var(--primary)" stroke-width="2"/&gt;&lt;text x="430" y="280" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="bold" fill="var(--dark)"&gt;Staff&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;circle cx="430" cy="120" r="40" fill="var(--white)" stroke="var(--primary)" stroke-width="2"/&gt;&lt;text x="430" y="120" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="bold" fill="var(--dark)"&gt;Skills&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;circle cx="300" cy="150" r="40" fill="var(--white)" stroke="var(--primary)" stroke-width="2"/&gt; &lt;text x="300" y="150" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="bold" fill="var(--dark)"&gt;Symbols&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;line x1="300" y1="110" x2="300" y2="170" stroke="var(--primary)" stroke-width="2" stroke-dasharray="5,5"/&gt;&lt;line x1="300" y1="240" x2="300" y2="290" stroke="var(--primary)" stroke-width="2" stroke-dasharray="5,5"/&gt;&lt;line x1="340" y1="170" x2="390" y2="120" stroke="var(--primary)" stroke-width="2" stroke-dasharray="5,5"/&gt;&lt;line x1="340" y1="230" x2="390" y2="280" stroke="var(--primary)" stroke-width="2" stroke-dasharray="5,5"/&gt;&lt;line x1="260" y1="170" x2="210" y2="120" stroke="var(--primary)" stroke-width="2" stroke-dasharray="5,5"/&gt;&lt;line x1="260" y1="230" x2="210" y2="280" stroke="var(--primary)" stroke-width="2" stroke-dasharray="5,5"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;The 7 Elements:&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between" style="flex-wrap: wrap;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div style="flex: 1 1 48%;"&gt;&lt;p class="mb-10"&gt;&lt;span class="badge"&gt;1&lt;/span&gt; &lt;strong&gt;Strategy&lt;/strong&gt;&lt;/p&gt;&lt;p class="mb-10"&gt;&lt;span class="badge"&gt;2&lt;/span&gt; &lt;strong&gt;Structure&lt;/strong&gt;&lt;/p&gt;&lt;p class="mb-10"&gt;&lt;span class="badge"&gt;3&lt;/span&gt; &lt;strong&gt;Systems&lt;/strong&gt;&lt;/p&gt;&lt;p class="mb-10"&gt;&lt;span class="badge"&gt;4&lt;/span&gt; &lt;strong&gt;Symbols&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div style="flex: 1 1 48%;"&gt;&lt;p class="mb-10"&gt;&lt;span class="badge"&gt;5&lt;/span&gt; &lt;strong&gt;Style&lt;/strong&gt;&lt;/p&gt;&lt;p class="mb-10"&gt;&lt;span class="badge"&gt;6&lt;/span&gt; &lt;strong&gt;Staff&lt;/strong&gt;&lt;/p&gt;&lt;p class="mb-10"&gt;&lt;span class="badge"&gt;7&lt;/span&gt; &lt;strong&gt;Skills&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center mt-20"&gt; &lt;button class="btn btn-primary" id="startGameBtn"&gt;Start the Game&lt;/button&gt; &lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="game-container" id="gameContainer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="score-panel flex justify-between align-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;&lt;strong&gt;Question:&lt;/strong&gt; &lt;span id="currentQuestion"&gt;1&lt;/span&gt;/&lt;span id="totalQuestions"&gt;14&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;&lt;strong&gt;Score:&lt;/strong&gt; &lt;span id="currentScore"&gt;0&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="progress-container"&gt;&lt;div class="progress-bar" id="progressBar"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="questionsContainer"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mt-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn btn-primary" id="submitBtn"&gt;Submit Answer&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn btn-secondary" id="nextBtn" style="display: none;"&gt;Next Question&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="results-container" id="resultsContainer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card-header text-center"&gt;&lt;h2&gt;Your 7S Model Game Results&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card-content results"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="resultBadgeContainer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="result-badge excellent" id="excellentBadge" style="display: none;"&gt;Excellent! Master of 7S&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="result-badge good" id="goodBadge" style="display: none;"&gt;Good Job! 7S Practitioner&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="result-badge needs-improvement" id="improveBadge" style="display: none;"&gt;Keep Learning! 7S Apprentice&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;You scored &lt;span id="finalScore"&gt;0&lt;/span&gt; out of &lt;span id="maxScore"&gt;14&lt;/span&gt; points!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="feedbackText"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="mt-20"&gt;Performance Breakdown:&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="breakdownContainer"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center mt-20"&gt;&lt;button class="btn btn-primary" id="restartBtn"&gt;Play Again&lt;/button&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="share-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;Share Your Results:&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="#" class="share-btn copylink" id="copyLinkBtn"&gt;&lt;i class="fas fa-link"&gt;&lt;/i&gt; Copy Link&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="#" class="share-btn twitter" id="shareTwitterBtn"&gt;&lt;i class="fab fa-twitter"&gt;&lt;/i&gt; Twitter&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="#" class="share-btn linkedin" id="shareLinkedInBtn"&gt;&lt;i class="fab fa-linkedin"&gt;&lt;/i&gt; LinkedIn&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="#" class="share-btn email" id="shareEmailBtn"&gt;&lt;i class="fas fa-envelope"&gt;&lt;/i&gt; Email&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Game data: Array of question objects</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const questions = [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 1, category: "Strategy", type: "multiple", question: "In the 7S Model, what is the primary focus of the 'Strategy' element?", options: ["The visual representations of company values", "The plan for achieving organizational goals and competitive advantage", "The day-to-day operational procedures", "The leadership style of managers"], correctAnswer: 1, explanation: "Strategy refers to the organization's plan for achieving its goals, outlining the direction the company should take to succeed in its industry..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 2, category: "Strategy", type: "scenario", question: "A technology startup has a strategy focused on continuous innovation, but their organizational practices don't support this. What is the likely outcome?", scenario: "A technology start-up adopts a strategy of continuous innovation...", options: ["The company will still succeed because their strategy is solid", "The misalignment between strategy and culture leads to missed opportunities", "This approach will boost employee morale...", "The company should immediately shift to a different industry"], correctAnswer: 1, explanation: "Without creating space for innovation, the misalignment between strategy and culture leads to missed opportunities..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 3, category: "Structure", type: "multiple", question: "What does 'Structure' represent in the 7S Model?", options: ["The financial architecture...", "The physical office layout...", "The organizational hierarchy, reporting relationships, and division of labor", "The customer base structure"], correctAnswer: 2, explanation: "Structure is the organizational architecture that defines company hierarchy..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 4, category: "Structure", type: "scenario", question: "Based on this success story, what benefit did the matrix structure provide to the financial institution?", scenario: "A financial institution adopts a matrix organizational structure...", options: ["It simplified operations...", "It balanced global consistency with local market responsiveness", "It eliminated the need for regional offices...", "It focused solely on regulatory requirements..."], correctAnswer: 1, explanation: "The matrix structure allowed the company to balance global consistency with local market responsiveness..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 5, category: "Systems", type: "multiple", question: "Which of the following best describes the 'Systems' element in the 7S Model?", options: ["The IT infrastructure only", "The company's operational processes and procedures that define how business is conducted", "The security systems in place", "The financial systems only"], correctAnswer: 1, explanation: "Systems encompass the company's operational processes and procedures..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 6, category: "Systems", type: "scenario", question: "In this scenario about a medical institution, what was the core issue with their systems?", scenario: "A medical institution aspires toward a culture of trust and security...", options: ["The institution had too much security...", "There was misalignment between their projected values and their actual systems", "Their messaging was too focused on security", "The institution prioritized modern equipment over security"], correctAnswer: 1, explanation: "The core issue was the misalignment between the institution's projected values (trust and security) and their actual systems..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 7, category: "Symbols", type: "multiple", question: "What role do 'Symbols' play in organizational culture according to the 7S Model?", options: ["They are purely decorative elements...", "They visually represent and reinforce culture and convey values, mission, and identity", "They are only relevant for customer-facing businesses", "They are only important during the founding of a company"], correctAnswer: 1, explanation: "Symbols represent the visual and cultural elements that permeate an organization..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 8, category: "Symbols", type: "scenario", question: "What approach did the sustainability-oriented cooperative take that effectively aligned their symbols with their values?", scenario: "A sustainability-oriented cooperative has not only expressed its environmental dedication...", options: ["They focused only on creating a visually appealing logo", "They prioritized office aesthetics over environmental considerations", "They embedded their values in both their visual identity and physical environment", "They emphasized verbal communication..."], correctAnswer: 2, explanation: "The cooperative embedded their environmental values in both their visual identity (the logo) and their physical environment..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 9, category: "Style", type: "multiple", question: "What does the 'Style' element represent in the 7S Model?", options: ["The dress code and appearance standards", "The prevailing leadership and management approach that influences organizational behavior", "The architectural style of the company's buildings", "The branding and marketing aesthetics"], correctAnswer: 1, explanation: "Style encapsulates the prevailing leadership and management approach in an organization..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 10, category: "Style", type: "scenario", question: "What was the root problem with the marketing agency's leadership style?", scenario: "A marketing agency encountered a leadership style misalignment when its leaders embraced a highly hierarchical...", options: ["The leaders were too focused on creativity", "The agency had too many employees...", "The hierarchical, micromanagement approach conflicted with the need for autonomy and creativity", "The agency didn't have clear leadership roles defined"], correctAnswer: 2, explanation: "The root problem was that the hierarchical, micromanagement-oriented leadership style directly conflicted with the company's mission..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 11, category: "Staff", type: "multiple", question: "According to the 7S Model, what is the significance of the 'Staff' element?", options: ["It refers only to the hiring practices...", "It focuses only on employee compensation...", "It represents the composition and capabilities of employees who execute systems and work within the structure", "It refers exclusively to the management team"], correctAnswer: 2, explanation: "The composition and capabilities of the staff play a pivotal role..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 12, category: "Staff", type: "scenario", question: "What key advantage did the NGO gain from its inclusive staffing approach?", scenario: "An NGO that is committed to fostering global unity has a staffing approach that highlights its unwavering commitment to diversity...", options: ["It reduced operational costs significantly", "It enabled them to effectively engage with and understand diverse communities", "It simplified their recruitment process", "It eliminated the need for cultural training"], correctAnswer: 1, explanation: "The NGO's inclusive staffing approach enabled them to effectively engage with and understand the communities they serve..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 13, category: "Skills", type: "multiple", question: "What does the 'Skills' element refer to in the 7S Model?", options: ["Only the technical qualifications of employees", "The competencies and capabilities that exist within the organization", "Only the leadership skills of managers", "The ability to hire qualified personnel"], correctAnswer: 1, explanation: "In the context of shifting organizational culture, the competency and adaptability of the workforce are paramount..." },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ id: 14, category: "Skills", type: "scenario", question: "A company identifies a skills gap in data analytics crucial for its new AI strategy. What should be its primary focus regarding the 'Skills' element?", scenario: "A traditional manufacturing company decides to implement an AI-driven predictive maintenance strategy...", options: ["Immediately hire a new team of data scientists...", "Invest in training and upskilling programs for current employees while selectively hiring for specialized roles", "Outsource all data analytics work...", "Ignore the skills gap..."], correctAnswer: 1, explanation: "Addressing a skills gap often involves a combination of training existing staff (upskilling/reskilling) and strategic hiring..." }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const startGameBtn = document.getElementById('startGameBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const introContainer = document.getElementById('introContainer');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const gameContainer = document.getElementById('gameContainer');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const questionsContainer = document.getElementById('questionsContainer');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const currentQuestionEl = document.getElementById('currentQuestion');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const totalQuestionsEl = document.getElementById('totalQuestions');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const currentScoreEl = document.getElementById('currentScore');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const progressBar = document.getElementById('progressBar');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const submitBtn = document.getElementById('submitBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const nextBtn = document.getElementById('nextBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const resultsContainer = document.getElementById('resultsContainer');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const finalScoreEl = document.getElementById('finalScore');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const maxScoreEl = document.getElementById('maxScore');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const restartBtn = document.getElementById('restartBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const excellentBadge = document.getElementById('excellentBadge');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const goodBadge = document.getElementById('goodBadge');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const improveBadge = document.getElementById('improveBadge');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const feedbackTextEl = document.getElementById('feedbackText');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const breakdownContainer = document.getElementById('breakdownContainer');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Removed AI Feature Elements' references</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let currentQuestionIndex = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let score = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let userAnswers = [];<span class="Apple-converted-space"> </span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Removed GEMINI API Key and URL constants</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Removed AI Helper functions (showLoading, hideLoading, callGeminiAPI, getDeeperExplanation)</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (startGameBtn) startGameBtn.addEventListener('click', startGame);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function startGame() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentQuestionIndex = 0; score = 0; userAnswers = [];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>introContainer.style.display = 'none'; resultsContainer.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>gameContainer.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>loadQuestion(); updateScoreDisplay(); updateProgress();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>nextBtn.textContent = 'Next Question';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>submitBtn.disabled = true; nextBtn.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function loadQuestion() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (currentQuestionIndex &lt; questions.length) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const questionData = questions[currentQuestionIndex];</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>questionsContainer.innerHTML = '';<span class="Apple-converted-space"> </span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const card = document.createElement('div'); card.className = 'card question-card';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (questionData.type === "scenario" &amp;&amp; questionData.scenario) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const scenarioDiv = document.createElement('div'); scenarioDiv.className = 'scenario-card';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>scenarioDiv.innerHTML = `&lt;strong&gt;Scenario:&lt;/strong&gt;&lt;p style="margin-bottom:0;"&gt;${questionData.scenario}&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>card.appendChild(scenarioDiv);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const questionTitle = document.createElement('h3'); questionTitle.className = 'mb-10';<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>questionTitle.textContent = `Q${currentQuestionIndex + 1}: ${questionData.question}`; card.appendChild(questionTitle);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const optionsDiv = document.createElement('div'); optionsDiv.className = 'options-container';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>questionData.options.forEach((option, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const optionDiv = document.createElement('div'); optionDiv.className = 'option';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>optionDiv.textContent = option; optionDiv.dataset.index = index;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>optionDiv.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>document.querySelectorAll('.option.selected').forEach(opt =&gt; opt.classList.remove('selected'));</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>optionDiv.classList.add('selected');</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>submitBtn.disabled = false;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>optionsDiv.appendChild(optionDiv);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>card.appendChild(optionsDiv);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const feedbackDiv = document.createElement('div'); feedbackDiv.className = 'feedback';<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>feedbackDiv.id = `feedback-${questionData.id}`; card.appendChild(feedbackDiv);</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Removed AI Deeper Explanation Button &amp; Container creation</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>questionsContainer.appendChild(card);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>currentQuestionEl.textContent = currentQuestionIndex + 1;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>totalQuestionsEl.textContent = questions.length;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>submitBtn.style.display = 'inline-block'; nextBtn.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>submitBtn.disabled = true; nextBtn.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>showResults();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function updateScoreDisplay() { currentScoreEl.textContent = score; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function updateProgress() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const progressPercent = ((currentQuestionIndex) / questions.length) * 100;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>progressBar.style.width = `${progressPercent}%`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (submitBtn) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>submitBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const selectedOption = questionsContainer.querySelector('.option.selected');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (!selectedOption) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const questionData = questions[currentQuestionIndex];</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const selectedAnswerIndex = parseInt(selectedOption.dataset.index);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const feedbackDiv = document.getElementById(`feedback-${questionData.id}`);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const allOptions = questionsContainer.querySelectorAll('.option');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>allOptions.forEach(opt =&gt; { opt.style.pointerEvents = 'none'; });</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>let isCorrect = selectedAnswerIndex === questionData.correctAnswer;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>userAnswers.push({ question: questionData.question, selected: questionData.options[selectedAnswerIndex], correctAnswerText: questionData.options[questionData.correctAnswer], isCorrect: isCorrect, explanation: questionData.explanation, category: questionData.category });</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (isCorrect) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>score++; selectedOption.classList.add('correct');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>feedbackDiv.innerHTML = `&lt;i class="fas fa-check-circle"&gt;&lt;/i&gt; &lt;strong&gt;Correct!&lt;/strong&gt; ${questionData.explanation}`;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>feedbackDiv.className = 'feedback correct';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>selectedOption.classList.add('incorrect');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>allOptions.forEach(opt =&gt; { if (parseInt(opt.dataset.index) === questionData.correctAnswer) opt.classList.add('correct'); });</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>feedbackDiv.innerHTML = `&lt;i class="fas fa-times-circle"&gt;&lt;/i&gt; &lt;strong&gt;Incorrect.&lt;/strong&gt; ${questionData.explanation}`;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>feedbackDiv.className = 'feedback incorrect';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>updateScoreDisplay();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Removed showing AI explain button</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>submitBtn.style.display = 'none'; nextBtn.style.display = 'inline-block'; nextBtn.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (currentQuestionIndex === questions.length - 1) nextBtn.textContent = 'Show Results';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (nextBtn) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>nextBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>currentQuestionIndex++; updateProgress();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (currentQuestionIndex &lt; questions.length) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>loadQuestion();</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (nextBtn.textContent === 'Show Results' &amp;&amp; currentQuestionIndex &lt; questions.length -1) nextBtn.textContent = 'Next Question';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>progressBar.style.width = `100%`;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>showResults();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function showResults() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>gameContainer.style.display = 'none'; resultsContainer.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>finalScoreEl.textContent = score; maxScoreEl.textContent = questions.length;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const percentage = (score / questions.length) * 100;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>excellentBadge.style.display = 'none'; goodBadge.style.display = 'none'; improveBadge.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Removed hiding/clearing AI study tips container</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>let resultMessage = "";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (percentage &gt;= 80) { excellentBadge.style.display = 'inline-block'; resultMessage = "Congratulations! Strong understanding."; }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>else if (percentage &gt;= 50) { goodBadge.style.display = 'inline-block'; resultMessage = "Good effort! Room to deepen knowledge."; }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>else { improveBadge.style.display = 'inline-block'; resultMessage = "Keep practicing! Review concepts."; }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>feedbackTextEl.innerHTML = `&lt;p&gt;${resultMessage}&lt;/p&gt;`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>breakdownContainer.innerHTML = '';<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>userAnswers.forEach((ans, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const p = document.createElement('p');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>p.innerHTML = `&lt;strong&gt;Q${index + 1} (${ans.category}): ${ans.question}&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                 </span>Your Answer: &lt;span style="color:${ans.isCorrect ? 'var(--success)' : 'var(--danger)'}; font-weight: bold;"&gt;${ans.selected}&lt;/span&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                 </span>${!ans.isCorrect ? `Correct Answer: &lt;span style="color:var(--success); font-weight: bold;"&gt;${ans.correctAnswerText}&lt;/span&gt;&lt;br&gt;` : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                                 </span>&lt;em&gt;Explanation: ${ans.explanation}&lt;/em&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>breakdownContainer.appendChild(p);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (restartBtn) restartBtn.addEventListener('click', startGame);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Removed AI Study Tips Feature event listener</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Share functionality (simplified for brevity in this example)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const copyLinkBtn = document.getElementById('copyLinkBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (copyLinkBtn) copyLinkBtn.addEventListener('click', (e) =&gt; { e.preventDefault(); navigator.clipboard.writeText(window.location.href).then(() =&gt; alert('Link copied!')).catch(err =&gt; console.error('Copy failed', err)); });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const shareTwitterBtn = document.getElementById('shareTwitterBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (shareTwitterBtn) shareTwitterBtn.addEventListener('click', (e) =&gt; { e.preventDefault(); const text = `I scored ${score}/${questions.length} on the 7S Model Game!`; const url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&amp;text=${encodeURIComponent(text)}`; window.open(url, '_blank'); });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const shareLinkedInBtn = document.getElementById('shareLinkedInBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (shareLinkedInBtn) shareLinkedInBtn.addEventListener('click', (e) =&gt; { e.preventDefault(); const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`; window.open(url, '_blank'); });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const shareEmailBtn = document.getElementById('shareEmailBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (shareEmailBtn) shareEmailBtn.addEventListener('click', (e) =&gt; { e.preventDefault(); const subject = `My 7S Model Game Results: ${score}/${questions.length}`; const body = `I scored ${score}/${questions.length}! Try it: ${window.location.href}`; window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&amp;body=${encodeURIComponent(body)}`; });</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
